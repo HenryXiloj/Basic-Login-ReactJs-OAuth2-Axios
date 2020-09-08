@@ -5,10 +5,10 @@ import { authUrl } from "../util/Util";
 class AuthService extends Component {
   login(json) {
     const headers = {
-      Authorization: "Basic " + btoa("YOUR_CLIENT:YOUR_SECRET"),
+      Authorization: "Basic " + btoa("signsignature:12345"),
       "Content-type": "application/x-www-form-urlencoded",
     };
-    
+
     return axios({
       method: "POST",
       url: authUrl,
@@ -26,6 +26,10 @@ class AuthService extends Component {
     return payload.username;
   }
 
+  saveToken(accessToken) {
+    sessionStorage.setItem("token", accessToken);
+  }
+
   getDataToken(accessToken) {
     if (accessToken) {
       console.log(JSON.parse(atob(accessToken.split(".")[1])));
@@ -41,10 +45,6 @@ class AuthService extends Component {
       return true;
     }
     return false;
-  }
-
-  logout() {
-    sessionStorage.clear();
   }
 }
 

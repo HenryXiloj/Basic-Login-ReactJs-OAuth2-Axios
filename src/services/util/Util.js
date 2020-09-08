@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const restApi = axios.create({
-    baseURL: 'http://localhost:9000/services/ws'
+    baseURL: 'http://localhost:9000/services'
 })
 
 const authUrl  = 'http://localhost:9000/services/oauth/token';
