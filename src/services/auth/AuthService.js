@@ -5,7 +5,7 @@ import { authUrl } from "../util/Util";
 class AuthService extends Component {
   login(json) {
     const headers = {
-      Authorization: "Basic " + btoa("signsignature:12345"),
+      Authorization: "Basic " + btoa("YOUR_CLIENT:YOUR_SECRET"),
       "Content-type": "application/x-www-form-urlencoded",
     };
 
